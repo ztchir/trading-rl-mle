@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.ipynb_checkpoints/
+
+# Data (This will be tracked with DVC)
+data/
+!data/.gitkeep
+
+# Experiment Logs
+logs/
+outputs/
+Wanda/
+.hydra/
+
+# Models
+*.zip
+*.pth
+models/
+
+# IDE
+.vscode/
+.idea/
