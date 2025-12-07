@@ -1,0 +1,28 @@
+name: trading-rl
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - setuptools
+  - wheel
+  - numpy<2.0     # REQUIRED: Numpy 2.0 breaks many ML libs; force 1.x
+  - pandas
+  - matplotlib
+  - seaborn
+  - swig          # REQUIRED: Needed to compile Gymnasium Box2D environments on Mac
+  - pytorch       # Standard package includes MPS (Metal) support on Mac
+  - pip:
+    - gymnasium[all]>=0.29.1   # The modern OpenAI Gym replacement
+    - stable-baselines3>=2.3.0 # Reliable PPO implementations
+    - pandas-ta
+    - yfinance>=0.2.0          # Data Downloader
+    - hydra-core>=1.3.0        # Config Management
+    - wandb>=0.16.0            # Experiment Tracking
+    - dvc>=3.0.0               # Data Version Control
+    - pytest                   # Testing
+    - black                    # Formatting
+    - isort                    # Import sorting
+    - pre-commit               # Git hooks

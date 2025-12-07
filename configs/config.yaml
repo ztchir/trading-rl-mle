@@ -1,0 +1,21 @@
+# @package _global_
+
+# 1. defaults: This list tells hydra how to compose the final config
+defaults:
+  - _self_
+  - env: default    # Load 'configs/env/default.yaml'
+  - agent: ppo      # Load 'configs/agents/ppo.yaml'
+  
+# 2. Global Experiment Settings
+project_name: "trading-rl-mle"
+seed: 42
+device: "mps"       # 'mps' (apple silicon), 'cuda' or 'cpu'
+
+# 3. Hydra Output Management (Crucial for Tracking)
+# This forces Hydra to create a new folder for every run: outputs/2025-05-12/14-30-00/
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

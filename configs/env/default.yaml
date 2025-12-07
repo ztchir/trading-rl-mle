@@ -1,0 +1,16 @@
+id: "TradingEnv-v0"
+ticker: "AAPL"
+
+# Data params
+data_dir: "data/processes"
+start_date: "2020-01-01"
+end_date: "2023-01-01"
+
+# Enivironment Logic
+window_size: 30         # Lookback window
+initial_balance: 10000
+comission: 0.001        # 0.1% fee per trade (Simulates reality)
+
+# Reward Shaping Weights
+reward_metric: "sharpe" # Options: log_return, sharpe, sortino
+volatility_penalty: 0.1 # Penalty factor for high variance

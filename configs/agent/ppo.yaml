@@ -1,0 +1,17 @@
+name: "ppo"
+
+# Network Architecture
+policy: "MlpPolicy" # 'MlpPolicy' for standard, 'CnnPolicy' if using images
+
+# PPO Hyperparameters
+learning_rate: 0.0003
+n_steps: 2048       # Number of steps to run for each enviroment per update
+batch_size: 64
+n_epochs: 10
+gamma: 0.99         # Discount Factor
+gae_lambda: 0.095
+clip_range: 0.2
+ent_coef: 0.0
+verbose: 1
+
+
