@@ -87,7 +87,7 @@ def main(cfg: DictConfig):
     
     # Load
     # Parquet is preferred for its efficiency and compatibility with data processing frameworks
-    filename = f"{cfg.env.ticker}_processed.parqiuet"
+    filename = f"{cfg.env.ticker}_processed.parquet"
     save_path = output_dir / filename
     
     processed_df.to_parquet(save_path)

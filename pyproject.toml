@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trading_rl_mle"
+version = "0.1.0"
+description = "RL Trading Agent with MLOps pipeline"
+requires-python = ">=3.10"
+
+# This section is critical. It tells Python: "My code is inside 'src'"
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# --- Tool Configurations (Best Practice) ---
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]  # Helps pytest find your code too
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
