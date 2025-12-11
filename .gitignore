@@ -5,20 +5,26 @@ __pycache__/
 .env
 .ipynb_checkpoints/
 
+# Ignore the specific root output folder if you use it
+/checkpoints/
+/outputs/
+
 # Data (This will be tracked with DVC)
-data/
+/data/
 !data/.gitkeep
 
 # Experiment Logs
 logs/
 outputs/
-Wanda/
+wanda/
 .hydra/
+tensorboard_logs/
 
-# Models
-*.zip
-*.pth
-models/
+# Machine Learning Artifacts
+*.zip        # Stable-Baselines3 models
+*.pth        # PyTorch models
+*.h5         # Keras models
+*.pkl        # Pickle files
 
 # IDE
 .vscode/

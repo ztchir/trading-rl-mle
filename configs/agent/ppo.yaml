@@ -1,5 +1,8 @@
 name: "ppo"
 
+# Training Duration
+total_timesteps: 100000
+
 # Network Architecture
 policy: "MlpPolicy" # 'MlpPolicy' for standard, 'CnnPolicy' if using images
 
